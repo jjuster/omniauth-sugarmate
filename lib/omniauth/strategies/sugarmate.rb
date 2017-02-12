@@ -2,9 +2,8 @@ require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class Doorkeeper < OmniAuth::Strategies::OAuth2
-      # change the class name and the :name option to match your application name
-      option :name, :doorkeeper
+    class Sugarmate < OmniAuth::Strategies::OAuth2
+      option :name, :sugarmate
 
       option :client_options, {
         :site => "http://sugarmate.io",
@@ -17,7 +16,6 @@ module OmniAuth
         {
           :email => raw_info["email"],
           :nickname => raw_info["nickname"]
-          # and anything else you want to return to your API consumers
         }
       end
 
